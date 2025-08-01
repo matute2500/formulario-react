@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css'; // Opcional: estilos
 
 function Formulario() {
   const [fecha, setFecha] = useState('');
@@ -9,18 +8,10 @@ function Formulario() {
   const enviarDatos = async (e) => {
     e.preventDefault();
 
-    if (!fecha) {
-      setMensaje('Selecciona una fecha');
-      return;
-    }
-
-    const [yyyy, mm, dd] = fecha.split('-');
-    const fechaFormateada = `${dd}/${mm}/${yyyy}`; // dd/mm/yyyy
-
-    const url = 'https://script.google.com/macros/s/AKfycbyEOpRIcNUwoYLuSsKDBSrXgln8wSdWfORjpMSy2DyN8O7V2utAr0jz4YDUje3fL8zm-g/exec'; // ← reemplaza por la URL de tu Apps Script
+    const url = 'https://script.google.com/macros/s/AKfycbwcSziOdVBrbEnjmHKqrHquOQf_CG3Vc8cjlAyW4RbmkbPk-j91V0-v_NynoWCkMXjBSA/exec'; // Cambia esta URL
 
     const body = new URLSearchParams();
-    body.append('fecha', fechaFormateada);
+    body.append('fecha', fecha);
     body.append('tipo', tipo);
 
     try {
@@ -32,46 +23,48 @@ function Formulario() {
 
       const data = await respuesta.json();
       if (data.status === 'ok') {
-        setMensaje('✅ Datos enviados correctamente');
+        setMensaje('Datos enviados correctamente');
         setFecha('');
         setTipo('LIGA');
       } else {
-        setMensaje('❌ Error al enviar datos');
+        setMensaje('Error al enviar datos');
       }
     } catch (error) {
       console.error('Error:', error);
-      setMensaje('❌ Error al conectar con el servidor');
+      setMensaje('Error al conectar con el servidor');
     }
   };
 
   return (
-    <div className="formulario-container">
+    <div style={{ maxWidth: 400, margin: 'auto', padding: 20 }}>
       <h2>Formulario de Partido</h2>
       <form onSubmit={enviarDatos}>
-        <label>Fecha:</label>
-        <input
-          type="date"
-          value={fecha}
-          onChange={(e) => setFecha(e.target.value)}
-          className="input"
-          required
-        />
-        
-
-        <label>Tipo:</label>
-        <select
-          value={tipo}
-          onChange={(e) => setTipo(e.target.value)}
-          className="input"
-        >
-          <option value="LIGA">LIGA</option>
-          <option value="AMISTOSO">AMISTOSO</option>
-          <option value="CAMPEONATO">CAMPEONATO</option>
-        </select>
-
+        <div style={{ marginBottom: 10 }}>
+          <label>
+            Fecha (dd/mm/aaaa):<br />
+            <input
+              type="text"
+              placeholder="dd/mm/aaaa"
+              value={fecha}
+              onChange={(e) => setFecha(e.target.value)}
+              pattern="\d{2}/\d{2}/\d{4}"
+              required
+            />
+          </label>
+        </div>
+        <div style={{ marginBottom: 10 }}>
+          <label>
+            Tipo:<br />
+            <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+              <option value="LIGA">LIGA</option>
+              <option value="AMISTOSO">AMISTOSO</option>
+              <option value="CAMPEONATO">CAMPEONATO</option>
+            </select>
+          </label>
+        </div>
         <button type="submit">Enviar</button>
       </form>
-      {mensaje && <p className="mensaje">{mensaje}</p>}
+      {mensaje && <p>{mensaje}</p>}
     </div>
   );
 }
