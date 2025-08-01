@@ -56,16 +56,7 @@ function Formulario() {
           className="input"
           required
         />
-        <label style={styles.label}>
-          Fecha:
-          <input
-            type="date"
-            value={fecha}
-            onChange={(e) => setFecha(e.target.value)}
-            required
-            style={styles.input}
-          />
-        </label>
+        
 
         <label>Tipo:</label>
         <select
