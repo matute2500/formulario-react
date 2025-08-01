@@ -58,15 +58,17 @@ function Formulario() {
         <div style={{ marginBottom: 10 }}>
           <label>
             Competición:<br />
-            <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+            <select value={competicion} onChange={(e) => setCompeticion(e.target.value)}>
               <option value="LIGA">LIGA</option>
               <option value="AMISTOSO">AMISTOSO</option>
               <option value="CAMPEONATO">CAMPEONATO</option>
             </select>
           </label>
+        </div>
+        <div style={{ marginBottom: 10 }}>
           <label>
             Equipo Atco de Madrid:<br />
-            <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+            <select value={eqatco} onChange={(e) => setEqAtco(e.target.value)}>
               <option value="ALEVIN A F7">ALEVIN A F7</option>
               <option value="BENJAMIN A">BENJAMIN A</option>
               <option value="BENJAMIN B">BENJAMIN B</option>
