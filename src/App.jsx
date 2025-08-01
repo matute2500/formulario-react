@@ -22,6 +22,8 @@ function Formulario() {
   const [minutosJugadosSuplente, setMinutosJugadosSuplente] = useState('0');
   const [golesDetalleTitular, setGolesDetalleTitular] = useState([]);
   const [golesDetalleSuplente, setGolesDetalleSuplente] = useState([]);
+  const [comentarioTitular, setComentarioTitular] = useState('');
+  const [comentarioSuplente, setComentarioSuplente] = useState('');
   const [mensaje, setMensaje] = useState('');
   const [enviando, setEnviando] = useState(false);
 
@@ -85,6 +87,8 @@ function Formulario() {
     body.append('minutosJugadosSuplente', minutosJugadosSuplente);
     body.append('golesDetalleTitular', JSON.stringify(golesDetalleTitular));
     body.append('golesDetalleSuplente', JSON.stringify(golesDetalleSuplente));
+    body.append('comentarioTitular', comentarioTitular);
+    body.append('comentarioSuplente', comentarioSuplente);
     body.append('observaciones', observaciones);
 
     try {
@@ -116,6 +120,8 @@ function Formulario() {
         setMinutosJugadosSuplente('0');
         setGolesDetalleTitular([]);
         setGolesDetalleSuplente([]);
+        setComentarioTitular('');
+        setComentarioSuplente('');
         setObservaciones('');
       } else {
         setMensaje('❌ Error al enviar datos');
@@ -295,7 +301,7 @@ function Formulario() {
                       onChange={(e) => setNombreTorneo(e.target.value)}
                       required={competicion === 'TORNEO'}
                       style={{ 
-                        width: '100%', 
+                        width: 'calc(100% - 16px)', 
                         padding: 8, 
                         borderRadius: 5, 
                         border: '1px solid #ccc',
@@ -363,14 +369,11 @@ function Formulario() {
                       marginBottom: 10
                     }}
                   >
-                    <option value="ALEVIN A F7">⚽ Alevín A F7</option>
-                    <option value="ALEVIN B F7">⚽ Alevín B F7</option>
-                    <option value="BENJAMIN A">👶 Benjamín A</option>
-                    <option value="BENJAMIN B">👶 Benjamín B</option>
-                    <option value="PREBENJAMIN A">🧒 Prebenjamín A</option>
-                    <option value="PREBENJAMIN B">🧒 Prebenjamín B</option>
-                    <option value="INFANTIL A">🧑 Infantil A</option>
-                    <option value="INFANTIL B">🧑 Infantil B</option>
+                    <option value="ALEVIN A F7">Alevín A F7</option>
+                    <option value="BENJAMIN A">Benjamín A</option>
+                    <option value="BENJAMIN B">Benjamín B</option>
+                    <option value="PREBENJAMIN A">Prebenjamín A</option>
+                    <option value="PREBENJAMIN B">Prebenjamín B</option>
                   </select>
                 </label>
                 
@@ -413,7 +416,7 @@ function Formulario() {
                     onChange={(e) => setEquipoRival(e.target.value)}
                     required
                     style={{ 
-                      width: '100%', 
+                      width: 'calc(100% - 16px)', 
                       padding: 8, 
                       borderRadius: 5, 
                       border: '1px solid #ccc',
@@ -520,7 +523,7 @@ function Formulario() {
                   onChange={(e) => setObservaciones(e.target.value)}
                   rows="3"
                   style={{ 
-                    width: '100%', 
+                    width: 'calc(100% - 16px)', 
                     padding: 8, 
                     borderRadius: 5, 
                     border: '1px solid #ccc',
@@ -720,6 +723,29 @@ function Formulario() {
                   ))}
                 </div>
               )}
+              
+              {/* Comentarios sobre la actuación del portero titular */}
+              <div style={{ marginTop: 15 }}>
+                <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
+                  💬 Comentarios sobre la actuación:
+                  <textarea
+                    placeholder="Valoración del rendimiento, aspectos destacados, áreas de mejora..."
+                    value={comentarioTitular}
+                    onChange={(e) => setComentarioTitular(e.target.value)}
+                    rows="3"
+                    style={{ 
+                      width: 'calc(100% - 16px)', 
+                      padding: 8, 
+                      borderRadius: 5, 
+                      border: '1px solid #ccc',
+                      marginTop: 5,
+                      resize: 'vertical',
+                      fontFamily: 'Arial, sans-serif',
+                      fontSize: '0.9em'
+                    }}
+                  />
+                </label>
+              </div>
             </div>
 
             {/* Portero Suplente */}
@@ -897,6 +923,29 @@ function Formulario() {
                   ))}
                 </div>
               )}
+              
+              {/* Comentarios sobre la actuación del portero suplente */}
+              <div style={{ marginTop: 15 }}>
+                <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
+                  💬 Comentarios sobre la actuación:
+                  <textarea
+                    placeholder="Valoración del rendimiento, aspectos destacados, áreas de mejora..."
+                    value={comentarioSuplente}
+                    onChange={(e) => setComentarioSuplente(e.target.value)}
+                    rows="3"
+                    style={{ 
+                      width: 'calc(100% - 16px)', 
+                      padding: 8, 
+                      borderRadius: 5, 
+                      border: '1px solid #ccc',
+                      marginTop: 5,
+                      resize: 'vertical',
+                      fontFamily: 'Arial, sans-serif',
+                      fontSize: '0.9em'
+                    }}
+                  />
+                </label>
+              </div>
             </div>
           </div>
 
