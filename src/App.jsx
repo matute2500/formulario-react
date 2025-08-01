@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Formulario.css'; // Opcional: estilos
+import './App.css'; // Opcional: estilos
 
 function Formulario() {
   const [fecha, setFecha] = useState('');
