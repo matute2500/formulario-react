@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 function Formulario() {
+  // Estados del formulario
   const [fecha, setFecha] = useState('');
   const [competicion, setCompeticion] = useState('LIGA');
   const [jornada, setJornada] = useState('1');
@@ -23,6 +24,9 @@ function Formulario() {
   const [golesDetalleSuplente, setGolesDetalleSuplente] = useState([]);
   const [mensaje, setMensaje] = useState('');
   const [enviando, setEnviando] = useState(false);
+
+  // Detectar si es dispositivo móvil
+  const isMobile = window.innerWidth <= 768;
 
   // Funciones para manejar el detalle de goles
   const actualizarGolesDetalle = (cantidad, esPorteroTitular) => {
@@ -125,12 +129,17 @@ function Formulario() {
   };
 
   return (
-    <div style={{ maxWidth: 600, margin: 'auto', padding: 20, fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ 
+      maxWidth: 600, 
+      margin: 'auto', 
+      padding: isMobile ? '8px' : '20px', 
+      fontFamily: 'Arial, sans-serif' 
+    }}>
       {/* Header con logo */}
       <div style={{ 
         textAlign: 'center', 
-        marginBottom: 30, 
-        padding: 20, 
+        marginBottom: isMobile ? 15 : 30, 
+        padding: isMobile ? 15 : 20, 
         backgroundColor: '#d32f2f', 
         color: 'white', 
         borderRadius: 10 
@@ -156,11 +165,11 @@ function Formulario() {
       {/* Formulario principal */}
       <div style={{ 
         backgroundColor: '#f5f5f5', 
-        padding: 30, 
+        padding: isMobile ? 12 : 30, 
         borderRadius: 15, 
         boxShadow: '0 4px 8px rgba(0,0,0,0.1)' 
       }}>
-        <h2 style={{ textAlign: 'center', color: '#d32f2f', marginBottom: 30 }}>
+        <h2 style={{ textAlign: 'center', color: '#d32f2f', marginBottom: isMobile ? 15 : 30 }}>
           📋 Nuevo Partido
         </h2>
         
@@ -168,14 +177,14 @@ function Formulario() {
           {/* Información básica del partido */}
           <div style={{ 
             backgroundColor: 'white', 
-            padding: 20, 
+            padding: isMobile ? 12 : 20, 
             borderRadius: 10, 
-            marginBottom: 20,
+            marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
             <h3 style={{ color: '#d32f2f', marginTop: 0 }}>🏟️ Información del Partido</h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 25, marginBottom: 15 }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 15 }}>
               <div>
                 <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
                   📅 Fecha del partido:
@@ -325,14 +334,14 @@ function Formulario() {
           {/* Información de equipos */}
           <div style={{ 
             backgroundColor: 'white', 
-            padding: 20, 
+            padding: isMobile ? 12 : 20, 
             borderRadius: 10, 
-            marginBottom: 20,
+            marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
             <h3 style={{ color: '#d32f2f', marginTop: 0 }}>👕 Equipos y Resultado</h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 12 : 20 }}>
               {/* Atlético de Madrid */}
               <div style={{ 
                 padding: 15, 
@@ -474,9 +483,9 @@ function Formulario() {
           {/* Ubicación y detalles */}
           <div style={{ 
             backgroundColor: 'white', 
-            padding: 20, 
+            padding: isMobile ? 12 : 20, 
             borderRadius: 10, 
-            marginBottom: 20,
+            marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
             <h3 style={{ color: '#d32f2f', marginTop: 0 }}>📍 Ubicación y Detalles</h3>
@@ -527,9 +536,9 @@ function Formulario() {
           {/* Información de porteros */}
           <div style={{ 
             backgroundColor: 'white', 
-            padding: 20, 
+            padding: isMobile ? 12 : 20, 
             borderRadius: 10, 
-            marginBottom: 20,
+            marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
             <h3 style={{ color: '#d32f2f', marginTop: 0 }}>🥅 Información de Porteros</h3>
