@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 function Formulario() {
   const [fecha, setFecha] = useState('');
-  const [tipo, setTipo] = useState('LIGA');
+  const [competicion, setCompeticion] = useState('LIGA');
+  const [eqatco, setEqAtco] = useState('ALEVIN A F7');
   const [mensaje, setMensaje] = useState('');
 
   const enviarDatos = async (e) => {
@@ -12,7 +13,8 @@ function Formulario() {
 
     const body = new URLSearchParams();
     body.append('fecha', fecha);
-    body.append('tipo', tipo);
+    body.append('competicion', competicion);
+    body.append('eqatco', eqatco);
 
     try {
       const respuesta = await fetch(url, {
@@ -25,7 +27,8 @@ function Formulario() {
       if (data.status === 'ok') {
         setMensaje('Datos enviados correctamente');
         setFecha('');
-        setTipo('LIGA');
+        setCompeticion('LIGA');
+        setEqAtco('ALEVIN A F7');
       } else {
         setMensaje('Error al enviar datos');
       }
