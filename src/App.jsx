@@ -544,7 +544,7 @@ function Formulario() {
             marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
-            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>🥅 ESTADISTICAS PORTEROS</h3>
+            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>🥅  Inf. Porteros</h3>
             
             {/* Portero Titular */}
             <div style={{ 
