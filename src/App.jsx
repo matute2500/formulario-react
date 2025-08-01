@@ -8,27 +8,22 @@ function App() {
     e.preventDefault();
 
     
-    try {
-      const res = await fetch('https://script.google.com/macros/s/AKfycbz-gMgpMg6V6ULADS3UpoPnZx1K2KJZdkSq2piTkVD2cxNQvLUITqOLPO4uqc-Nwm_zeA/exec', {
+    
+
+
+  try {
+  const res = await fetch('https://script.google.com/macros/s/AKfycbz-gMgpMg6V6ULADS3UpoPnZx1K2KJZdkSq2piTkVD2cxNQvLUITqOLPO4uqc-Nwm_zeA/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fecha, tipo })
       });
-
-      const data = await res.json();
-
-      if (data.status === 'ok') {
-        alert('✅ Datos guardados');
-        setFecha('');
-        setTipo('');
-      } else {
-        alert('❌ Error en el servidor');
-      }
-    } catch (error) {
-      alert('❌ Error de red');
-      console.error(error);
-    }
+  const data = await res.json();
+  console.log(data);
+} catch (error) {
+  console.error("❌ Error de red:", error.message);
+}
   };
+
 
   return (
     <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
