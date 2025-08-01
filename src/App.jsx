@@ -27,8 +27,8 @@ function Formulario() {
       if (data.status === 'ok') {
         setMensaje('Datos enviados correctamente');
         setFecha('');
-        setCompeticion('LIGA');
-        setEqAtco('ALEVIN A F7');
+        setCompeticion('');
+        setEqAtco('');
       } else {
         setMensaje('Error al enviar datos');
       }
