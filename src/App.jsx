@@ -9,7 +9,8 @@ function Formulario() {
   const enviarDatos = async (e) => {
     e.preventDefault();
 
-    const url = 'https://script.google.com/macros/s/AKfycbwcSziOdVBrbEnjmHKqrHquOQf_CG3Vc8cjlAyW4RbmkbPk-j91V0-v_NynoWCkMXjBSA/exec'; // Cambia esta URL
+    const url = 'https://script.google.com/macros/s/AKfycby0lYUZjqGA_eS9H6mpgqR_KrTuKa1e66IRwqZmsuU9aZqWp2teFDTsSbEKAMFtiQ620Q/exec'; // Cambia esta URL
+          
 
     const body = new URLSearchParams();
     body.append('fecha', fecha);
