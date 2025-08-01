@@ -26,7 +26,7 @@ function Formulario() {
 
       const data = await respuesta.json();
       if (data.status === 'ok') {
-        setMensaje('Datos enviados correctamente'+body.toString);
+        setMensaje('Datos enviados correctamente'+body.toString());
         setFecha('');
         setCompeticion('LIGA');
         setEqAtco('ALEVIN A F7');
