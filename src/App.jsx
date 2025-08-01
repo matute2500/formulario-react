@@ -165,7 +165,7 @@ function Formulario() {
           />
           <h1 style={{ margin: 0, fontSize: '2.5em' }}>Atlético de Madrid</h1>
         </div>
-        <p style={{ margin: '10px 0 0 0', fontSize: '1.2em' }}>Registro de Partidos - Departamento de Porteros</p>
+        <p style={{ margin: '10px 0 0 0', fontSize: '1.2em' }}>Registro de Partidos   Departamento de Porteros</p>
       </div>
 
       {/* Formulario principal */}
@@ -188,7 +188,7 @@ function Formulario() {
             marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
-            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>🏟️ Información del Partido</h3>
+            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>🏟️ Inf. del Partido</h3>
             
                             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 15 }}>
               <div>
@@ -200,7 +200,7 @@ function Formulario() {
                     onChange={(e) => setFecha(e.target.value)}
                     required
                     style={{ 
-                      width: '100%', 
+                      width: 'calc(100% - 16px)', 
                       padding: 8, 
                       borderRadius: 5, 
                       border: '1px solid #ccc',
@@ -219,7 +219,7 @@ function Formulario() {
                     onChange={(e) => setHora(e.target.value)}
                     required
                     style={{ 
-                      width: '100%', 
+                      width: 'calc(100% - 16px)', 
                       padding: 8, 
                       borderRadius: 5, 
                       border: '1px solid #ccc',
