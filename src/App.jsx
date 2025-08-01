@@ -25,10 +25,10 @@ function Formulario() {
 
       const data = await respuesta.json();
       if (data.status === 'ok') {
-        setMensaje('Datos enviados correctamente');
+        setMensaje('Datos enviados correctamente'+body.toString);
         setFecha('');
-        setCompeticion('');
-        setEqAtco('');
+        setCompeticion('LIGA');
+        setEqAtco('ALEVIN A F7');
       } else {
         setMensaje('Error al enviar datos');
       }
