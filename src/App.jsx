@@ -182,7 +182,7 @@ function Formulario() {
             marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
-            <h3 style={{ color: '#d32f2f', marginTop: 0 }}>🏟️ Información del Partido</h3>
+            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>🏟️ Información del Partido</h3>
             
                             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 15 }}>
               <div>
@@ -339,7 +339,7 @@ function Formulario() {
             marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
-            <h3 style={{ color: '#d32f2f', marginTop: 0 }}>👕 Equipos y Resultado</h3>
+            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>👕 Equipos y Resultado</h3>
             
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 12 : 20 }}>
               {/* Atlético de Madrid */}
@@ -488,7 +488,7 @@ function Formulario() {
             marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
-            <h3 style={{ color: '#d32f2f', marginTop: 0 }}>📍 Ubicación y Detalles</h3>
+            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>📍 Ubicación y Detalles</h3>
             
             <div style={{ marginBottom: 15 }}>
               <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
@@ -541,7 +541,7 @@ function Formulario() {
             marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
-            <h3 style={{ color: '#d32f2f', marginTop: 0 }}>🥅 Información de Porteros</h3>
+            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>🥅 Información de Porteros</h3>
             
             {/* Portero Titular */}
             <div style={{ 
