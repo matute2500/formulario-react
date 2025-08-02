@@ -71,14 +71,7 @@ function Formulario() {
     // Calcular resultado del partido
     const golesAtletiNum = parseInt(golesAtleti);
     const golesRivalNum = parseInt(golesRival);
-    let resultado;
-    if (golesAtletiNum > golesRivalNum) {
-      resultado = 'VICTORIA';
-    } else if (golesAtletiNum < golesRivalNum) {
-      resultado = 'DERROTA';
-    } else {
-      resultado = 'EMPATE';
-    }
+    const resultado = `${golesAtletiNum}-${golesRivalNum}`;
 
     const url = 'https://script.google.com/macros/s/AKfycbzV2M3hf03NtSbqxWpnQuCTy_KPYjdK_9sMnm1MiWvEVoBIMYl7Fc71O3IxpTNycjwGGA/exec';
 
