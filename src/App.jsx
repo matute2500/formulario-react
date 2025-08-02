@@ -232,27 +232,6 @@ function Formulario() {
 
             <div style={{ marginBottom: 15 }}>
               <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
-                🏆 Tipo de competición:
-                <select 
-                  value={competicion} 
-                  onChange={(e) => setCompeticion(e.target.value)}
-                  style={{ 
-                    width: '100%', 
-                    padding: 8, 
-                    borderRadius: 5, 
-                    border: '1px solid #ccc',
-                    marginTop: 5
-                  }}
-                >
-                  <option value="LIGA">🏆 Liga</option>
-                  <option value="AMISTOSO">🤝 Amistoso</option>
-                  <option value="TORNEO">⚽ Torneo</option>
-                </select>
-              </label>
-            </div>
-
-            <div style={{ marginBottom: 15 }}>
-              <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
                 🏠 Ubicación del partido:
                 <select 
                   value={ubicacion} 
@@ -268,6 +247,27 @@ function Formulario() {
                   <option value="LOCAL">🏠 Local (Casa)</option>
                   <option value="VISITANTE">✈️ Visitante (Fuera)</option>
                   <option value="NEUTRAL">⚖️ Campo neutral</option>
+                </select>
+              </label>
+            </div>
+
+            <div style={{ marginBottom: 15 }}>
+              <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
+                🏆 Tipo de competición:
+                <select 
+                  value={competicion} 
+                  onChange={(e) => setCompeticion(e.target.value)}
+                  style={{ 
+                    width: '100%', 
+                    padding: 8, 
+                    borderRadius: 5, 
+                    border: '1px solid #ccc',
+                    marginTop: 5
+                  }}
+                >
+                  <option value="LIGA">🏆 Liga</option>
+                  <option value="AMISTOSO">🤝 Amistoso</option>
+                  <option value="TORNEO">⚽ Torneo</option>
                 </select>
               </label>
             </div>
