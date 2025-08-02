@@ -296,16 +296,17 @@ function Formulario() {
                     🏅 Nombre del torneo:
                     <input
                       type="text"
-                      placeholder="Ej: Oviedo Cup"
+                      placeholder="EJ: OVIEDO CUP"
                       value={nombreTorneo}
-                      onChange={(e) => setNombreTorneo(e.target.value)}
+                      onChange={(e) => setNombreTorneo(e.target.value.toUpperCase())}
                       required={competicion === 'TORNEO'}
                       style={{ 
                         width: 'calc(100% - 16px)', 
                         padding: 8, 
                         borderRadius: 5, 
                         border: '1px solid #ccc',
-                        marginTop: 5
+                        marginTop: 5,
+                        textTransform: 'uppercase'
                       }}
                     />
                   </label>
@@ -411,9 +412,9 @@ function Formulario() {
                   ⚪ Eq. Rival:
                   <input
                     type="text"
-                    placeholder="Eq. rival"
+                    placeholder="EQ. RIVAL"
                     value={equipoRival}
-                    onChange={(e) => setEquipoRival(e.target.value)}
+                    onChange={(e) => setEquipoRival(e.target.value.toUpperCase())}
                     required
                     style={{ 
                       width: 'calc(100% - 16px)', 
@@ -421,7 +422,8 @@ function Formulario() {
                       borderRadius: 5, 
                       border: '1px solid #ccc',
                       marginTop: 5,
-                      marginBottom: 10
+                      marginBottom: 10,
+                      textTransform: 'uppercase'
                     }}
                   />
                 </label>
@@ -518,9 +520,9 @@ function Formulario() {
               <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
                 📝 Observaciones adicionales:
                 <textarea
-                  placeholder="Notas, instrucciones especiales, cambios de último momento..."
+                  placeholder="NOTAS, INSTRUCCIONES ESPECIALES, CAMBIOS DE ÚLTIMO MOMENTO..."
                   value={observaciones}
-                  onChange={(e) => setObservaciones(e.target.value)}
+                  onChange={(e) => setObservaciones(e.target.value.toUpperCase())}
                   rows="3"
                   style={{ 
                     width: 'calc(100% - 16px)', 
@@ -529,7 +531,8 @@ function Formulario() {
                     border: '1px solid #ccc',
                     marginTop: 5,
                     resize: 'vertical',
-                    fontFamily: 'Arial, sans-serif'
+                    fontFamily: 'Arial, sans-serif',
+                    textTransform: 'uppercase'
                   }}
                 />
               </label>
@@ -729,9 +732,9 @@ function Formulario() {
                 <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
                   💬 Comentarios sobre la actuación:
                   <textarea
-                    placeholder="Valoración del rendimiento, aspectos destacados, áreas de mejora..."
+                    placeholder="VALORACIÓN DEL RENDIMIENTO, ASPECTOS DESTACADOS, ÁREAS DE MEJORA..."
                     value={comentarioTitular}
-                    onChange={(e) => setComentarioTitular(e.target.value)}
+                    onChange={(e) => setComentarioTitular(e.target.value.toUpperCase())}
                     rows="3"
                     style={{ 
                       width: 'calc(100% - 16px)', 
@@ -741,7 +744,8 @@ function Formulario() {
                       marginTop: 5,
                       resize: 'vertical',
                       fontFamily: 'Arial, sans-serif',
-                      fontSize: '0.9em'
+                      fontSize: '0.9em',
+                      textTransform: 'uppercase'
                     }}
                   />
                 </label>
@@ -929,9 +933,9 @@ function Formulario() {
                 <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
                   💬 Comentarios sobre la actuación:
                   <textarea
-                    placeholder="Valoración del rendimiento, aspectos destacados, áreas de mejora..."
+                    placeholder="VALORACIÓN DEL RENDIMIENTO, ASPECTOS DESTACADOS, ÁREAS DE MEJORA..."
                     value={comentarioSuplente}
-                    onChange={(e) => setComentarioSuplente(e.target.value)}
+                    onChange={(e) => setComentarioSuplente(e.target.value.toUpperCase())}
                     rows="3"
                     style={{ 
                       width: 'calc(100% - 16px)', 
@@ -941,7 +945,8 @@ function Formulario() {
                       marginTop: 5,
                       resize: 'vertical',
                       fontFamily: 'Arial, sans-serif',
-                      fontSize: '0.9em'
+                      fontSize: '0.9em',
+                      textTransform: 'uppercase'
                     }}
                   />
                 </label>
