@@ -62,9 +62,28 @@ function Formulario() {
     e.preventDefault();
     setEnviando(true);
 
-    const url = 'https://script.google.com/macros/s/AKfycbyNAGCVkQFFF6GR-vkwZGzn61Vc6sGpLXLb0BcOBTiqFGsfRkNSHkEDo42eExUq-k0Mlw/exec';
+    // Generar ID único para el partido
+    const timestamp = Date.now();
+    const fechaFormateada = fecha.replace(/-/g, '');
+    const equipoRivalCorto = equipoRival.substring(0, 3);
+    const partidoId = `${fechaFormateada}-${equipoRivalCorto}-${timestamp}`;
+
+    // Calcular resultado del partido
+    const golesAtletiNum = parseInt(golesAtleti);
+    const golesRivalNum = parseInt(golesRival);
+    let resultado;
+    if (golesAtletiNum > golesRivalNum) {
+      resultado = 'VICTORIA';
+    } else if (golesAtletiNum < golesRivalNum) {
+      resultado = 'DERROTA';
+    } else {
+      resultado = 'EMPATE';
+    }
+
+    const url = 'https://script.google.com/macros/s/AKfycbxKzgBNdznYyhmGBL2eKHP8dfD5gIvwtqmfibmSVeUMWo4ZODw1mAlteKY7NGT3KRVAMQ/exec';
 
     const body = new URLSearchParams();
+    body.append('partidoId', partidoId);
     body.append('fecha', fecha);
     body.append('competicion', competicion);
     if (competicion === 'LIGA') {
@@ -90,6 +109,7 @@ function Formulario() {
     body.append('comentarioTitular', comentarioTitular);
     body.append('comentarioSuplente', comentarioSuplente);
     body.append('observaciones', observaciones);
+    body.append('resultado', resultado);
 
     try {
       const respuesta = await fetch(url, {
