@@ -415,11 +415,11 @@ function Formulario() {
                       marginBottom: 10
                     }}
                   >
-                    <option value="ALEVIN A F7">Alevín A F7</option>
-                    <option value="BENJAMIN A">Benjamín A</option>
-                    <option value="BENJAMIN B">Benjamín B</option>
-                    <option value="PREBENJAMIN A">Prebenjamín A</option>
-                    <option value="PREBENJAMIN B">Prebenjamín B</option>
+                    <option value="ALEVIN A F7">ALEVIN A F7</option>
+                    <option value="BENJAMIN A">BENJAMIN A</option>
+                    <option value="BENJAMIN B">BENJAMIN B</option>
+                    <option value="PREBENJAMIN A">PREBENJAMIN A</option>
+                    <option value="PREBENJAMIN B">PREBENJAMIN B</option>
                   </select>
                 </label>
                 
