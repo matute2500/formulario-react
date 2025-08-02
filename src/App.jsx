@@ -176,7 +176,7 @@ function Formulario() {
         boxShadow: '0 4px 8px rgba(0,0,0,0.1)' 
       }}>
         <h2 style={{ textAlign: 'center', color: '#d32f2f', marginBottom: isMobile ? 15 : 30 }}>
-          📋 Grabación de Partido
+          📋 Grabación Partido
         </h2>
         
         <form onSubmit={enviarDatos}>
@@ -188,7 +188,7 @@ function Formulario() {
             marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
-                        <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>🔍 SCOUTING</h3>
+                        <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>🔍 Datos Partido</h3>
             
                             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 15 }}>
               <div>
@@ -491,9 +491,20 @@ function Formulario() {
                 margin: '10px 0',
                 color: '#1b5e20'
               }}>
-                <span style={{ color: '#d32f2f' }}>{golesAtleti}</span>
-                <span style={{ margin: '0 20px', color: '#666' }}>-</span>
-                <span style={{ color: '#757575' }}>{golesRival}</span>
+                {/* Mostrar marcador según ubicación */}
+                {ubicacion === 'VISITANTE' ? (
+                  <>
+                    <span style={{ color: '#757575' }}>{golesRival}</span>
+                    <span style={{ margin: '0 20px', color: '#666' }}>-</span>
+                    <span style={{ color: '#d32f2f' }}>{golesAtleti}</span>
+                  </>
+                ) : (
+                  <>
+                    <span style={{ color: '#d32f2f' }}>{golesAtleti}</span>
+                    <span style={{ margin: '0 20px', color: '#666' }}>-</span>
+                    <span style={{ color: '#757575' }}>{golesRival}</span>
+                  </>
+                )}
               </div>
               <p style={{ margin: 0, fontSize: '0.9em', color: '#666' }}>
                 {parseInt(golesAtleti) > parseInt(golesRival) ? 
