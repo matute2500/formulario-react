@@ -80,7 +80,7 @@ function Formulario() {
       resultado = 'EMPATE';
     }
 
-    const url = 'https://script.google.com/macros/s/AKfycbxKzgBNdznYyhmGBL2eKHP8dfD5gIvwtqmfibmSVeUMWo4ZODw1mAlteKY7NGT3KRVAMQ/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbwTcdIXengHJMCD0I6gYpd38p00ps46rdHxUqCuLp_Z1mc34IwCtkNk6wg4L2OFGO8l_A/exec';
 
     const body = new URLSearchParams();
     body.append('partidoId', partidoId);
