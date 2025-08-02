@@ -929,7 +929,7 @@ function Formulario() {
             marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
-            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>� OBSERVACIONES</h3>
+            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>� SCOUTING</h3>
             
             <div>
               <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
