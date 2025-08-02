@@ -62,7 +62,7 @@ function Formulario() {
     e.preventDefault();
     setEnviando(true);
 
-    const url = 'https://script.google.com/macros/s/AKfycbzRBSakDn5ELYawrcZo9h8-Bs2b1ADI32qYmiJD3rnaKv8OEv5ITbVm0fkqoTTqQHAR9Q/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbyNAGCVkQFFF6GR-vkwZGzn61Vc6sGpLXLb0BcOBTiqFGsfRkNSHkEDo42eExUq-k0Mlw/exec';
 
     const body = new URLSearchParams();
     body.append('fecha', fecha);
