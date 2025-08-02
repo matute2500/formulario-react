@@ -176,7 +176,7 @@ function Formulario() {
         boxShadow: '0 4px 8px rgba(0,0,0,0.1)' 
       }}>
         <h2 style={{ textAlign: 'center', color: '#d32f2f', marginBottom: isMobile ? 15 : 30 }}>
-          📋 Nuevo Partido
+          📋 Grabación de Partido
         </h2>
         
         <form onSubmit={enviarDatos}>
