@@ -525,7 +525,7 @@ function Formulario() {
               border: '2px solid #ffc107' 
             }}>
               <h4 style={{ color: '#f57c00', marginTop: 0, marginBottom: 15 }}>
-                👑 Portero Titular
+                🥇 Portero Titular
               </h4>
               
               <div style={{ marginBottom: 15 }}>
@@ -727,7 +727,7 @@ function Formulario() {
               border: '2px solid #9c27b0' 
             }}>
               <h4 style={{ color: '#7b1fa2', marginTop: 0, marginBottom: 15 }}>
-                🔄 Portero Suplente
+                🥉 Portero Suplente
               </h4>
               
               <div style={{ marginBottom: 15 }}>
@@ -921,7 +921,7 @@ function Formulario() {
             </div>
           </div>
 
-          {/* OBSERVACIONES */}
+          {/* SCOUTING */}
           <div style={{ 
             backgroundColor: 'white', 
             padding: isMobile ? 12 : 20, 
@@ -929,13 +929,13 @@ function Formulario() {
             marginBottom: isMobile ? 12 : 20,
             border: '2px solid #e0e0e0'
           }}>
-            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>📝 OBSERVACIONES</h3>
+            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>� OBSERVACIONES</h3>
             
             <div>
               <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
-                📝 Observaciones adicionales:
+                🎯 Observaciones Porteros Rivales:
                 <textarea
-                  placeholder="NOTAS, INSTRUCCIONES ESPECIALES, CAMBIOS DE ÚLTIMO MOMENTO..."
+                  placeholder="VALORACIONES DE INTERES SOBRE LOS PORTEROS RIVALES..."
                   value={observaciones}
                   onChange={(e) => setObservaciones(e.target.value.toUpperCase())}
                   rows="3"
