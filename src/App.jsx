@@ -251,6 +251,27 @@ function Formulario() {
               </label>
             </div>
 
+            <div style={{ marginBottom: 15 }}>
+              <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
+                🏠 Ubicación del partido:
+                <select 
+                  value={ubicacion} 
+                  onChange={(e) => setUbicacion(e.target.value)}
+                  style={{ 
+                    width: '100%', 
+                    padding: 8, 
+                    borderRadius: 5, 
+                    border: '1px solid #ccc',
+                    marginTop: 5
+                  }}
+                >
+                  <option value="LOCAL">🏠 Local (Casa)</option>
+                  <option value="VISITANTE">✈️ Visitante (Fuera)</option>
+                  <option value="NEUTRAL">⚖️ Campo neutral</option>
+                </select>
+              </label>
+            </div>
+
             {/* Campos dinámicos según tipo de competición */}
             {competicion === 'LIGA' && (
               <div style={{ 
@@ -482,60 +503,6 @@ function Formulario() {
                   '🤝 Empate'
                 }
               </p>
-            </div>
-          </div>
-
-          {/* Ubicación y detalles */}
-          <div style={{ 
-            backgroundColor: 'white', 
-            padding: isMobile ? 12 : 20, 
-            borderRadius: 10, 
-            marginBottom: isMobile ? 12 : 20,
-            border: '2px solid #e0e0e0'
-          }}>
-            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>📍 Ubicación y Detalles</h3>
-            
-            <div style={{ marginBottom: 15 }}>
-              <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
-                🏠 Ubicación del partido:
-                <select 
-                  value={ubicacion} 
-                  onChange={(e) => setUbicacion(e.target.value)}
-                  style={{ 
-                    width: '100%', 
-                    padding: 8, 
-                    borderRadius: 5, 
-                    border: '1px solid #ccc',
-                    marginTop: 5
-                  }}
-                >
-                  <option value="LOCAL">🏠 Local (Casa)</option>
-                  <option value="VISITANTE">✈️ Visitante (Fuera)</option>
-                  <option value="NEUTRAL">⚖️ Campo neutral</option>
-                </select>
-              </label>
-            </div>
-
-            <div>
-              <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
-                📝 Observaciones adicionales:
-                <textarea
-                  placeholder="NOTAS, INSTRUCCIONES ESPECIALES, CAMBIOS DE ÚLTIMO MOMENTO..."
-                  value={observaciones}
-                  onChange={(e) => setObservaciones(e.target.value.toUpperCase())}
-                  rows="3"
-                  style={{ 
-                    width: 'calc(100% - 16px)', 
-                    padding: 8, 
-                    borderRadius: 5, 
-                    border: '1px solid #ccc',
-                    marginTop: 5,
-                    resize: 'vertical',
-                    fontFamily: 'Arial, sans-serif',
-                    textTransform: 'uppercase'
-                  }}
-                />
-              </label>
             </div>
           </div>
 
@@ -951,6 +918,39 @@ function Formulario() {
                   />
                 </label>
               </div>
+            </div>
+          </div>
+
+          {/* OBSERVACIONES */}
+          <div style={{ 
+            backgroundColor: 'white', 
+            padding: isMobile ? 12 : 20, 
+            borderRadius: 10, 
+            marginBottom: isMobile ? 12 : 20,
+            border: '2px solid #e0e0e0'
+          }}>
+            <h3 style={{ color: '#d32f2f', marginTop: 0, fontSize: isMobile ? '1.1em' : '1.3em' }}>📝 OBSERVACIONES</h3>
+            
+            <div>
+              <label style={{ fontWeight: 'bold', display: 'block', marginBottom: 5 }}>
+                📝 Observaciones adicionales:
+                <textarea
+                  placeholder="NOTAS, INSTRUCCIONES ESPECIALES, CAMBIOS DE ÚLTIMO MOMENTO..."
+                  value={observaciones}
+                  onChange={(e) => setObservaciones(e.target.value.toUpperCase())}
+                  rows="3"
+                  style={{ 
+                    width: 'calc(100% - 16px)', 
+                    padding: 8, 
+                    borderRadius: 5, 
+                    border: '1px solid #ccc',
+                    marginTop: 5,
+                    resize: 'vertical',
+                    fontFamily: 'Arial, sans-serif',
+                    textTransform: 'uppercase'
+                  }}
+                />
+              </label>
             </div>
           </div>
 
